@@ -37,6 +37,7 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="<?php echo site_url("Co_database/sepatu")?>">Sepatu</a></li>
 						<li ><a href="<?php echo site_url("Co_database/admin")?>">Admin</a></li>
+						<li><a href="<?php echo site_url("Co_database/user")?>">User</a></li>
 						<li class="active"><a href="<?php echo site_url("Co_database/pemesanan")?>">Pemesanan</a></li>
 						<li><a href="<?php echo site_url("co_login/keluar")?>">Logout</a></li>
 					</ul> 

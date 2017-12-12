@@ -191,7 +191,41 @@ class Co_database extends CI_Controller {
         	$data['data']=$this->Mo_database->getAll($config , 'admin');
        		$this->load->view('login_admin', $data);
     }
+    function user(){
 
+    	$config['base_url']=base_url()."index.php/Co_database/user";
+            $config['total_rows']= $this->db->query("SELECT * FROM user;")->num_rows();
+            $config['per_page']=11;
+        	$config['num_links'] = 2;
+            $config['uri_segment']=3;
+
+             //Tambahan untuk styling
+	        $config['full_tag_open'] = "<ul class='pagination'>";
+	        $config['full_tag_close'] ="</ul>";
+	        $config['num_tag_open'] = '<li>';
+	        $config['num_tag_close'] = '</li>';
+	        $config['cur_tag_open'] = "<li class='disabled'><li class='active'><a href='#'>";
+	        $config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
+	        $config['next_tag_open'] = "<li>";
+	        $config['next_tagl_close'] = "</li>";
+	        $config['prev_tag_open'] = "<li>";
+	        $config['prev_tagl_close'] = "</li>";
+	        $config['first_tag_open'] = "<li>";
+	        $config['first_tagl_close'] = "</li>";
+	        $config['last_tag_open'] = "<li>";
+	        $config['last_tagl_close'] = "</li>";
+ 
+            $config['first_link']='< Pertama ';
+        	$config['last_link']='Terakhir > ';
+        	$config['next_link']='> ';
+        	$config['prev_link']='< ';
+            $this->pagination->initialize($config);
+ 
+        // konfigurasi model dan view untuk menampilkan data
+	        $this->load->model('Mo_database');
+        	$data['data']=$this->Mo_database->getAll($config , 'user');
+       		$this->load->view('login_user', $data);
+    }
 	function pemesanan(){
 
     	$config['base_url']=base_url()."index.php/Co_database/pemesanan";
@@ -359,6 +393,12 @@ class Co_database extends CI_Controller {
 		$res = $this->Mo_database->deleteDataAdmin($id_admin );
 		if($res >= 1){
 			redirect('Co_database/admin');
+		}
+	} 
+	function do_delete_user($Id_user ){
+		$res = $this->Mo_database->deleteDataUser($Id_user );
+		if($res >= 1){
+			redirect('Co_database/user');
 		}
 	} 
 

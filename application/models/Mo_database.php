@@ -87,6 +87,11 @@ class Mo_database extends CI_Model {
 		$res = $this->db->query("DELETE FROM admin WHERE id_admin =".$id_admin);
 		return $res;
 	}
+	public function deleteDataUser($Id_user){
+		//$res = $this->db->delete($nama_tabel,$where);
+		$res = $this->db->query("DELETE FROM user WHERE Id_user =".$Id_user);
+		return $res;
+	}
 
 	public function deleteDataPesanan($tanggal_pemesanan){
 		//$res = $this->db->delete($nama_tabel,$where);
