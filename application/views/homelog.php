@@ -62,7 +62,9 @@
 				<div class="owl-carousel add-owl">
 						<?php for($i=0; $i<6; $i++) { ?>
 						<div class="thumbnail">
-<?php echo "<img src='http://localhost/kppl/".$data[$i]['gambar']."' class="."add-item".">"; ?>
+							
+							<img src="<?php echo base_url().$data[$i]['gambar']; ?>" class="add-item">
+									
 						</div> 
 						<?php } ?>
 				</div> 

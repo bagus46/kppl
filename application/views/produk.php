@@ -84,8 +84,9 @@
 							<div class="portfolio-item" >
 								<div class="portfolio-img thumbnail" style="width: 370px;height: 278px;">
 								
-									<?php echo "<img src='http://localhost/kppl/".$d->gambar."' class="."port-item".">"; ?>
-									<a href="<?php echo "http://localhost/kppl/".$d->gambar; ?>">
+									
+									<img src="<?php echo base_url().$d->gambar; ?>" class="port-item">
+									<a href="<?php echo base_url().$d->gambar; ?>">
 								<div class="portfolio-img-hover" >
 								</div>
 								</a>
